@@ -358,7 +358,7 @@ li {
         @include blue-graduent;
       }
     }
-    a.close {
+    a.close, a.hide {
       position: absolute;
       top: -6px;
       right: -6px;
@@ -409,6 +409,7 @@ li {
 }
 
 .columns {
+  &.hide { display: none; }
   .column {
     border-bottom: dotted 1px #cccccc;
     padding: 0 0.8em;

@@ -92,6 +92,7 @@ class ERD
     $('div.model a.add_column').on 'click', @handle_add_column_click
     $('div.model a.cancel').on 'click', @handle_cancel_click
     $('div.model a.close').on 'click', @handle_remove_model_click
+    $('div.model a.hide').on 'click', @handle_toggle_columns_click
     $('#new_model_add_column').on 'click', @handle_new_model_add_column_click
     $('div.model a.cancel').on 'click', @handle_cancel_click
     $('div#open_migration').on 'click', @handle_open_migration_click
@@ -255,6 +256,18 @@ class ERD
       @edges.splice i, 1 if (edge.from == model_name) || (edge.to == model_name)
     @paper.clear()
     @connect_arrows(@edges)
+
+  handle_toggle_columns_click: (ev) =>
+    ev.preventDefault()
+    ev.stopPropagation()
+
+    target = $(ev.target)
+    columns = $(target).siblings('columns').first()
+
+    if $(columns).hasClass('hide')
+      $(columns).removeClass('hide')
+    else
+      $(columns).addClass('hide')
 
   handle_new_model_add_column_click: (ev) =>
     ev.preventDefault()
