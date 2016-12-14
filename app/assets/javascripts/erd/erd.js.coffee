@@ -259,7 +259,6 @@ class ERD
 
   handle_toggle_columns_click: (ev) =>
     ev.preventDefault()
-    ev.stopPropagation()
 
     target = $(ev.target)
     columns = $(target).siblings('.columns').first()
