@@ -261,7 +261,7 @@ class ERD
     ev.preventDefault()
 
     target = $(ev.target)
-    columns = $(target).siblings('.columns').first()
+    columns = $(target).closest('a').siblings('.columns').first()
 
     $(columns).toggleClass('hide')
 
