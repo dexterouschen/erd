@@ -262,12 +262,9 @@ class ERD
     ev.stopPropagation()
 
     target = $(ev.target)
-    columns = $(target).siblings('columns').first()
+    columns = $(target).siblings('.columns').first()
 
-    if $(columns).hasClass('hide')
-      $(columns).removeClass('hide')
-    else
-      $(columns).addClass('hide')
+    $(columns).toggleClass('hide')
 
   handle_new_model_add_column_click: (ev) =>
     ev.preventDefault()

@@ -358,12 +358,18 @@ li {
         @include blue-graduent;
       }
     }
+    a.close {
+      top: -6px;
+      background-color: $black;
+    }
+    a.hide {
+      top: 12px;
+      background-color: white;
+    }
     a.close, a.hide {
       position: absolute;
-      top: -6px;
       right: -6px;
       z-index: 2;
-      background-color: $black;
       border: 1px solid $black;
       display: block;
       width: 16px;
